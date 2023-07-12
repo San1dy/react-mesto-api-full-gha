@@ -7,7 +7,7 @@ const validationConfig = {
   errorClass: 'popup__error_active'
 };
 
-// Profile
+// Profile sdfsdf
 const buttonEditProfileOpen = document.querySelector('.profile__button_type_edit');
 const popupEditProfile = document.querySelector('.popup_type_edit');
 const formProfile = popupEditProfile.querySelector('.popup__form');
