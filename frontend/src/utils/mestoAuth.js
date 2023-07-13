@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3001';
+export const BASE_URL = 'http://api.san1dy.nomoredomains.work';
 
 function checkRes(res) {
   if (res.ok) {
