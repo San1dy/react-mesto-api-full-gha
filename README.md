@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.17.58
+IP 51.250.17.58
 
 Frontend https://san1dy.nomoredomains.work
 

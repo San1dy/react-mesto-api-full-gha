@@ -2,6 +2,9 @@ const allowedCors = [
   'localhost:3000',
   'http://localhost:3000',
   'https://localhost:3000',
+  'https://san1dy.nomoredomains.work',
+  'http://san1dy.nomoredomains.work',
+  'san1dy.nomoredomains.work',
 ];
 
 function checkAccessCors(req, res, next) {
