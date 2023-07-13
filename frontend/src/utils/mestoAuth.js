@@ -9,7 +9,7 @@ function checkRes(res) {
 }
 
 export function register(email, password) {
-  return fetch(`${BASE_URL}/signup`, {
+  return fetch(`https://api.san1dy.nomoredomains.work/signup`, {
     method: 'POST',
     credentials: 'include',
     headers: {
