@@ -192,7 +192,7 @@ function App() {
       .then(res => {
         handleRegistrationStatusClick();
         setIsRegistrationSuccess(true);
-        navigate('/react-mesto-auth/sign-in', { replace: true })
+        navigate('/react-mesto-api-full-gha/sign-in', { replace: true })
       })
       .catch(err => {
         console.log(`Error: ${err.message}`);
@@ -238,7 +238,7 @@ function App() {
     mestoAuth.logout()
       .then( _ => {
         localStorage.removeItem('jwt');
-        navigate('/react-mesto-auth/sign-in');
+        navigate('/react-mesto-api-full-gha/sign-in');
         setIsLoggedIn(false);
         setUserEmail('');
       })
@@ -313,13 +313,13 @@ function App() {
   return (
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
-        {(isUserInfoActive && location.pathname === '/react-mesto-auth/') && <UserInfo userEmail={userEmail} onSignOut={handleSignOut} />}
+        {(isUserInfoActive && location.pathname === '/react-mesto-api-full-gha/') && <UserInfo userEmail={userEmail} onSignOut={handleSignOut} />}
         <Header {...headerProps} />
         <Routes>
-          <Route path="/" element={isLoggedIn ? <Navigate to="react-mesto-auth/" replace /> : <Navigate to="react-mesto-auth/sign-in" replace />} />
-          <Route path="react-mesto-auth/sign-up" element={<Register onRegistration={handleRegistrationSubmit} isLoading={isLoading} />} />
-          <Route path="react-mesto-auth/sign-in" element={<Login onLogin={handleLogonSubmit} isLoading={isLoading} />} />
-          <Route path="react-mesto-auth/" element={<ProtectedRouteElement element={Main} {...mainProps} />} />
+          <Route path="/" element={isLoggedIn ? <Navigate to="react-mesto-api-full-gha/" replace /> : <Navigate to="react-mesto-api-full-gha/sign-in" replace />} />
+          <Route path="react-mesto-api-full-gha/sign-up" element={<Register onRegistration={handleRegistrationSubmit} isLoading={isLoading} />} />
+          <Route path="react-mesto-api-full-gha/sign-in" element={<Login onLogin={handleLogonSubmit} isLoading={isLoading} />} />
+          <Route path="react-mesto-api-full-gha/" element={<ProtectedRouteElement element={Main} {...mainProps} />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
