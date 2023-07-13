@@ -97,7 +97,7 @@ export class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://api.san1dy.nomoredomains.work',
+  baseUrl: 'https://api.san1dy.nomoredomains.work',
   headers: {
     'Content-Type': 'application/json'
   }
