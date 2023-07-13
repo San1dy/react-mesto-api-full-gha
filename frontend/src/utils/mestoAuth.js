@@ -11,7 +11,6 @@ function checkRes(res) {
 export function register(email, password) {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json"
     },
