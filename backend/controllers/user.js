@@ -6,7 +6,6 @@ const NotFoundError = require('../utils/errors/NotFoundError');
 const ValidationError = require('../utils/errors/ValidationError');
 const DataMatchError = require('../utils/errors/DataMatchError');
 
-
 function getUsers(req, res, next) {
   User.find({})
     .then((users) => res.send({ users }))
