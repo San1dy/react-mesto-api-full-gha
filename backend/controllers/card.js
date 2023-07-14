@@ -30,9 +30,7 @@ function deleteCard(req, res, next) {
       if (card.owner.toString() === req.user._id) {
         Card.findByIdAndRemove(req.params.cardId)
           .then(() => res.send({ card }))
-          .catch((err) => {
-            return next(err);
-          });
+          .catch(next);
       } else {
         throw new СredentialError('Недостаточно прав');
       }

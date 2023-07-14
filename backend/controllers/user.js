@@ -5,7 +5,7 @@ const User = require('../models/user');
 const NotFoundError = require('../utils/errors/NotFoundError');
 const ValidationError = require('../utils/errors/ValidationError');
 const DataMatchError = require('../utils/errors/DataMatchError');
-const AuthError = require('../utils/errors/AuthError');
+//const AuthError = require('../utils/errors/AuthError');
 
 function getUsers(req, res, next) {
   User.find({})
@@ -22,9 +22,6 @@ function getCurrentUser(req, res, next) {
       return res.send({ user });
     })
     .catch((err) => {
-      if (err.name === 'CastError') {
-        return next(new ValidationError('Передано некорректное значение id пользователя'));
-      }
       return next(err);
     });
 }
@@ -106,8 +103,10 @@ function login(req, res, next) {
 }
 
 function logout(req, res) {
-  const token = req.cookies.jwt;
-
+  //const token = req.cookies.jwt;
+  //if (!token) {
+  //  throw new AuthError('Необходима авторизация');
+  //}
   res.clearCookie('jwt');
   res.status(200).send({ message: 'Успешно' });
 }
