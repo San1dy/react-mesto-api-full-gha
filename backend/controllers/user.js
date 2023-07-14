@@ -5,7 +5,7 @@ const User = require('../models/user');
 const NotFoundError = require('../utils/errors/NotFoundError');
 const ValidationError = require('../utils/errors/ValidationError');
 const DataMatchError = require('../utils/errors/DataMatchError');
-//const AuthError = require('../utils/errors/AuthError');
+
 
 function getUsers(req, res, next) {
   User.find({})
@@ -21,9 +21,7 @@ function getCurrentUser(req, res, next) {
       }
       return res.send({ user });
     })
-    .catch((err) => {
-      return next(err);
-    });
+    .catch(next);
 }
 
 function getUserById(req, res, next) {
@@ -103,10 +101,6 @@ function login(req, res, next) {
 }
 
 function logout(req, res) {
-  //const token = req.cookies.jwt;
-  //if (!token) {
-  //  throw new AuthError('Необходима авторизация');
-  //}
   res.clearCookie('jwt');
   res.status(200).send({ message: 'Успешно' });
 }
