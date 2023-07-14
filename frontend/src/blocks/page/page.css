@@ -2,6 +2,7 @@
   background-color: #000000;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   min-width: 320px;
+  min-height: 100%;
   margin: 0 auto;
   text-rendering: optimizeLegibility;
   color: #fff;

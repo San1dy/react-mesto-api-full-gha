@@ -108,9 +108,6 @@ function login(req, res, next) {
 function logout(req, res) {
   const token = req.cookies.jwt;
 
-  if (!token) {
-    throw new AuthError('Необходима авторизация');
-  }
   res.clearCookie('jwt');
   res.status(200).send({ message: 'Успешно' });
 }

@@ -31,9 +31,6 @@ function deleteCard(req, res, next) {
         Card.findByIdAndRemove(req.params.cardId)
           .then(() => res.send({ card }))
           .catch((err) => {
-            if (err.name === 'CastError') {
-              return next(new ValidationError('Переданны некорректные данные при удалении карточки'));
-            }
             return next(err);
           });
       } else {
@@ -52,7 +49,7 @@ function putLikeCard(req, res, next) {
       return res.send({ card });
     })
     .catch((err) => {
-      if (err.name === 'ValidationError' || err.name === 'CastError') {
+      if (err.name === 'CastError') {
         return next(new ValidationError('Переданны некорректные данные при добавлении лайка у карточки'));
       }
       return next(err);
@@ -68,7 +65,7 @@ function deleteLikeCard(req, res, next) {
       return res.send({ card });
     })
     .catch((err) => {
-      if (err.name === 'ValidationError' || err.name === 'CastError') {
+      if (err.name === 'CastError') {
         return next(new ValidationError('Переданны некорректные данные при удалении лайка у карточки'));
       }
       return next(err);
