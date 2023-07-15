@@ -5,7 +5,7 @@ function auth(req, res, next) {
   const token = req.cookies.jwt;
 
   if (!token) {
-    return next(new AuthError('Необходима авторизация!'));
+    next(new AuthError('Необходима авторизация!'));
   }
 
   let payload;
